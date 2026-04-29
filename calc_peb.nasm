@@ -501,7 +501,7 @@ xor edx, ebx
 mov r10d, eax
 shl r10d, 6           
 
-; bitwise shift the hash by 6. r11d = (hash << 16)
+; bitwise shift the hash by 16. r11d = (hash << 16)
 mov r11d, eax
 shl r11d, 16 
 

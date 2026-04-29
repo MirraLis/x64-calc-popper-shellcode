@@ -25,6 +25,7 @@ names (ASCII).
 
 Hash algorithm: `hash = char + (SALT ^ SALT_2 ^ i) + (hash << 6) + (hash << 16) - hash`  
 Final XOR step applied to the result for additional obfuscation.
+Its basically a sdbm3 derivative.
 
 **XOR String Obfuscation**  
 Target command string is stored XOR-encoded in the `.text` section and decoded 
@@ -46,3 +47,6 @@ gcc calc_peb.obj -o calc_peb.exe -nostartfiles
 
 - Written as a learning exercise — payload target is calc.exe
 - Hash constants and XOR key are visible in source by design for educational clarity
+
+## Closing Note
+I left my comments in there. They show my thought process while i was making it. I hope it helps in understanding the code if analyse it.

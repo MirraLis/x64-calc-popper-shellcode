@@ -49,6 +49,8 @@ gcc calc_peb.obj -o calc_peb.exe -nostartfiles
 nasm -f bin calc_peb.nasm -o calc_peb.bin
 ```
 
+You can also used the compiled calc_peb.bin if you like.
+
 ## Notes
 
 - Written as a learning exercise — payload target is calc.exe
@@ -56,3 +58,5 @@ nasm -f bin calc_peb.nasm -o calc_peb.bin
 
 ## Closing Note
 I left my comments in there. They show my thought process while i was making it. I hope it helps in understanding the code if analyse it.
+
+This binary is for educational security research only. Do not run it on any system you do not own.

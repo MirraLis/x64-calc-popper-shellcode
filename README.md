@@ -38,9 +38,15 @@ from the export table RVAs.
 
 ## Build
 
+# As an executable
 ```nasm
 nasm -f win64 calc_peb.nasm -o calc_peb.obj
 gcc calc_peb.obj -o calc_peb.exe -nostartfiles
+```
+
+# As shellcode
+```nasm
+nasm -f bin calc_peb.nasm -o calc_peb.bin
 ```
 
 ## Notes

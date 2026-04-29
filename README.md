@@ -25,7 +25,7 @@ names (ASCII).
 
 Hash algorithm: `hash = char + (SALT ^ SALT_2 ^ i) + (hash << 6) + (hash << 16) - hash`  
 Final XOR step applied to the result for additional obfuscation.
-Its basically a sdbm3 derivative.
+Its basically a sdbm derivative.
 
 **XOR String Obfuscation**  
 Target command string is stored XOR-encoded in the `.text` section and decoded 

@@ -49,7 +49,7 @@ gcc calc_peb.obj -o calc_peb.exe -nostartfiles
 nasm -f bin calc_peb.nasm -o calc_peb.bin
 ```
 
-You can also used the compiled calc_peb.bin if you like.
+You can also used the compiled calc_peb.bin in the Releases if you like.
 
 ## Notes
 

